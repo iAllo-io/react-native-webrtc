@@ -1,10 +1,7 @@
 import { NativeModules } from 'react-native';
 
 import MediaStreamTrack from './MediaStreamTrack';
-import RTCRtpCapabilities, {
-    senderCapabilities,
-    DEFAULT_AUDIO_CAPABILITIES,
-} from './RTCRtpCapabilities';
+import RTCRtpCapabilities from './RTCRtpCapabilities';
 
 import RTCRtpSendParameters, {
     RTCRtpSendParametersInit,
