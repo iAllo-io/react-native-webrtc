@@ -355,6 +355,12 @@ RCT_EXPORT_METHOD(peerConnectionSendDTMF:(nonnull NSString *)tone duration:(NSTi
   }
   if(audioSender){
     if([audioSender.dtmfSender canInsertDtmf]){
+
+
+    if([tone hasPrefix:@"undefined"]) {
+        tone = [tone substringFromIndex:@"undefined".length];
+    }
+
       BOOL istoneplayed = [audioSender.dtmfSender insertDtmf:tone duration:duration interToneGap:interToneGap];
       NSLog(@"DTMF Tone played :: [%s]", istoneplayed ? "true" : "false");
       return;
